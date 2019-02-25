@@ -6,6 +6,7 @@ Quantizing full-precision deep neural networks to 4-bit using only 1K unlabeled 
 ##### Part I. Create Quantized Model and Prototxt
 ```shell
 # Python2.7
+cd ./python
 vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path according to your env
 python quantize.py # quantize weights to 4-bit
 python renorm.py # BN re-normalization in CPU mode
