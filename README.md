@@ -8,9 +8,9 @@ Quantizing full-precision deep neural networks to 4-bit using only 1K unlabeled 
 # Python2.7
 cd ./python
 vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path according to your env
-python quantize.py # quantize weights to 4-bit
+python weights_quan.py # quantize weights to 4-bit
 python renorm.py # BN re-normalization in CPU mode
-python act_quan.py # quantize activations to 8-bit
+python activations_quan.py # quantize activations to 8-bit
 ```
 ##### Part II. Test on validation set
 1. Add `act_quantize.cpp` and `act_quantize.cu` to `your_caffe_root/src/caffe/layers/`.
