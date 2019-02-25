@@ -5,7 +5,7 @@ Caffe implementation of "Learning Compression from Limited Unlabeled Data" (ECCV
 ##### Part I. Create Quantized Model and Prototxt
 ```shell
 # Python2.7
-vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path
+vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path according to your env
 python quantize.py # quantize weights to 4-bit
 python renorm.py # BN re-normalization in CPU mode
 python act_quan.py # quantize activations to 8-bit
@@ -13,7 +13,7 @@ python act_quan.py # quantize activations to 8-bit
 ##### Part II. Test on validation set
 1. Add `quantize.cpp` and `quantize.cu` to `your_caffe_root/src/caffe/layers/`.
 2. Add `quantize.hpp` to `your_caffe_root/include/caffe/layers/`.
-3. ```make -j2```
+3. ```make all -j2```
 4. ```./build/tools/caffe test --weights /your/BN_quantized_caffemodel/in/config.py --model /your/val_prototxt/in/config.py --gpu XX --iterations 1000 # val_batch_size = 50 in default (Line 10 in config.py)``` 
 
 ##### WARNING:
