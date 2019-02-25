@@ -25,7 +25,7 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 | Models | Weights | Activations | Top-1 (%) | Top-5 (%) 
 | ------ | -----| ------ | ---------- | -----------
 | [AlexNet-BN](https://github.com/HolmesShuan/AlexNet-BN-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 60.43 | 82.47
-| ReNorm |  4-bit | 8-bit
+| ReNorm |  4-bit | 8-bit | 59.94 | 
 | [ResNet-18](https://github.com/HolmesShuan/ResNet-18-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 69.08 | 89.03
 | ReNorm |  4-bit | 8-bit
 | [ResNet-50](https://github.com/KaimingHe/deep-residual-networks) | 32-bit | 32-bit | 75.30 | 92.11
@@ -37,6 +37,18 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 
 2. We quantize the first and last layer to 8-bit using fixed-point quantizer.
 
+### Network Structure Changes:
+We add a scale layer after each quantized convolution layer, i.e.
+
+![equation](http://latex.codecogs.com/gif.latex?\min_{\alpha,Q}||w-{\alpha}Q||_2^2)
+
+![equation](http://latex.codecogs.com/gif.latex?Conv(x)={\alpha}Qx+bias)
+
+
+* Blob[0] in Conv : ![equation](http://latex.codecogs.com/gif.latex?Q)
+* Blob[1] in Conv : ![equation](http://latex.codecogs.com/gif.latex?bias)
+* Blob[0] in newly-added scale layer : ![equation](http://latex.codecogs.com/gif.latex?\alpha)
+* Blob[1] in newly-added scale layer : ![equation](http://latex.codecogs.com/gif.latex?\alpha*bias)
 
 ### Reference
 ```
