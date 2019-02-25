@@ -14,6 +14,7 @@ python act_quan.py # quantize activations to 8-bit
 1. Add `quantize.cpp` and `quantize.cu` to `your_caffe_root/src/caffe/layers/`.
 2. Add `quantize.hpp` to `your_caffe_root/include/caffe/layers/`.
 3. ```make -j2```
+4. ```./build/tools/caffe test --weights /your/BN_quantized_caffemodel/in/config.py --model /your/val_prototxt/in/config.py --gpu XX --iterations 1000 # val_batch_size = 50 in default (Line 10 in config.py)``` 
 
 ##### WARNING:
 
