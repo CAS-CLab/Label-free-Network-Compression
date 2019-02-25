@@ -42,7 +42,7 @@ We add a scale layer after each quantized convolution layer, i.e.
 
 ![equation](http://latex.codecogs.com/gif.latex?\min_{\alpha,Q}||w-{\alpha}Q||_2^2)
 
-![equation](http://latex.codecogs.com/gif.latex?Conv(x)={\alpha}Qx+bias)
+![equation](http://latex.codecogs.com/gif.latex?QConv(x)={\alpha}Qx+bias={\alpha}(Qx+bias)-{\alpha}*bias+bias)
 
 
 * Blob[0] in Conv : ![equation](http://latex.codecogs.com/gif.latex?Q)
