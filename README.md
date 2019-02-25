@@ -1,5 +1,6 @@
 # Label-free-Network-Compression
-Caffe implementation of "Learning Compression from Limited Unlabeled Data" (ECCV2018).
+Caffe implementation of "Learning Compression from Limited Unlabeled Data" (ECCV2018). 
+Quantizing full-precision deep neural networks to 4-bit using only 1K unlabeled images.
 
 ### How to use?
 ##### Part I. Create Quantized Model and Prototxt
