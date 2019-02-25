@@ -2,6 +2,7 @@
 Caffe implementation of "Learning Compression from Limited Unlabeled Data" (ECCV2018).
 
 ### How to use?
+##### Part I. Create Quantized Model and Prototxt
 ```shell
 # Python2.7
 vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path
@@ -9,6 +10,10 @@ python quantize.py # quantize weights to 4-bit
 python renorm.py # BN re-normalization in CPU mode
 python act_quan.py # quantize activations to 8-bit
 ```
+##### Part II. Test on validation set
+1. Add `quantize.cpp` and `quantize.cu` to `your_caffe_root/src/caffe/layers/`.
+2. Add `quantize.hpp` to `your_caffe_root/include/caffe/layers/`.
+3. ```make -j2```
 
 ##### WARNING:
 
@@ -19,11 +24,11 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 | Models | Weights | Activations | Top-1 (%) | Top-5 (%) 
 | ------ | -----| ------ | ---------- | -----------
 | [AlexNet-BN](https://github.com/HolmesShuan/AlexNet-BN-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 60.43 | 82.47
-| |  4-bit | 8-bit
+| ReNorm |  4-bit | 8-bit
 | [ResNet-18](https://github.com/HolmesShuan/ResNet-18-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 69.08 | 89.03
-| |  4-bit | 8-bit
+| ReNorm |  4-bit | 8-bit
 | [ResNet-50](https://github.com/KaimingHe/deep-residual-networks) | 32-bit | 32-bit | 75.30 | 92.11
-| |  4-bit | 8-bit
+| ReNorm |  4-bit | 8-bit
 
 ##### Details: 
 
