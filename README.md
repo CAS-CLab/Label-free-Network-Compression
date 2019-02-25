@@ -28,7 +28,7 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 | Models | Weights | Activations | Top-1 (%) | Top-5 (%) 
 | ------ | -----| ------ | ---------- | -----------
 | [AlexNet-BN](https://github.com/HolmesShuan/AlexNet-BN-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 60.43 | 82.47
-| ReNorm |  4-bit | 8-bit |  | 
+| ReNorm |  4-bit | 8-bit | 60.12 | 82.22
 | [ResNet-18](https://github.com/HolmesShuan/ResNet-18-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 69.08 | 89.03
 | ReNorm |  4-bit | 8-bit | 67.48 | 88.02
 | [ResNet-50](https://github.com/KaimingHe/deep-residual-networks) | 32-bit | 32-bit | 75.30 | 92.11
