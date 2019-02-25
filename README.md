@@ -40,7 +40,7 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 
 2. We quantize the first and last layer to 8-bit using fixed-point quantizer.
 
-### Network Structure Changes:
+### Network Structure:
 We add a scale layer after each quantized convolution layer, i.e.
 
 ![equation](http://latex.codecogs.com/gif.latex?\min_{\alpha,Q}||w-{\alpha}Q||_2^2)
