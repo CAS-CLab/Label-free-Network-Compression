@@ -12,8 +12,8 @@ python renorm.py # BN re-normalization in CPU mode
 python act_quan.py # quantize activations to 8-bit
 ```
 ##### Part II. Test on validation set
-1. Add `quantize.cpp` and `quantize.cu` to `your_caffe_root/src/caffe/layers/`.
-2. Add `quantize.hpp` to `your_caffe_root/include/caffe/layers/`.
+1. Add `act_quantize.cpp` and `act_quantize.cu` to `your_caffe_root/src/caffe/layers/`.
+2. Add `act_quantize.hpp` to `your_caffe_root/include/caffe/layers/`.
 3. ```make all -j2```
 4. ```./build/tools/caffe test --weights /your/BN_quantized_caffemodel/in/config.py --model /your/val_prototxt/in/config.py --gpu XX --iterations 1000 # val_batch_size = 50 in default (Line 10 in config.py)``` 
 
