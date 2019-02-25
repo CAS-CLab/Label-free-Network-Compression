@@ -36,3 +36,17 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 1. We report the 224x224 single-crop (cropped from `256xN/Nx256` images) validation accuracy on the ImageNet validation set. BN parameters are updated using 1K randomly selected unlabeled training images.
 
 2. We quantize the first and last layer to 8-bit using fixed-point quantizer.
+
+
+### Reference
+```
+@inproceedings{Label-free,
+  author    = {Xiangyu He and
+               Jian Cheng},
+  title     = {Learning Compression from Limited Unlabeled Data},
+  booktitle = {Computer Vision - {ECCV} 2018 - 15th European Conference, Munich,
+               Germany, September 8-14, 2018, Proceedings, Part {I}},
+  pages     = {778--795},
+  year      = {2018}
+}
+```
