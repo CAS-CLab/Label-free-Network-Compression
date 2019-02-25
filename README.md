@@ -21,7 +21,7 @@ python act_quan.py # quantize activations to 8-bit
 `renorm.py` will use 1K images to update BN parameters in default. The memory consumption can be pretty large for deep networks (>12G).
 You may edit Line 8 in `config.py` to alleviate this problem.
 
-### Results
+### Results:
 | Models | Weights | Activations | Top-1 (%) | Top-5 (%) 
 | ------ | -----| ------ | ---------- | -----------
 | [AlexNet-BN](https://github.com/HolmesShuan/AlexNet-BN-Caffemodel-on-ImageNet) | 32-bit | 32-bit | 60.43 | 82.47
@@ -48,9 +48,9 @@ We add a scale layer after each quantized convolution layer, i.e.
 * Blob[0] in Conv : ![equation](http://latex.codecogs.com/gif.latex?Q)
 * Blob[1] in Conv : ![equation](http://latex.codecogs.com/gif.latex?bias)
 * Blob[0] in newly-added scale layer : ![equation](http://latex.codecogs.com/gif.latex?\alpha)
-* Blob[1] in newly-added scale layer : ![equation](http://latex.codecogs.com/gif.latex?\alpha*bias)
+* Blob[1] in newly-added scale layer : ![equation](http://latex.codecogs.com/gif.latex?-\alpha*bias+bias)
 
-### Reference
+### Reference:
 ```
 @inproceedings{Label-free,
   author    = {Xiangyu He and
