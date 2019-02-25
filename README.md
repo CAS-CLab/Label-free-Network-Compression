@@ -9,7 +9,7 @@ Quantizing full-precision deep neural networks to 4-bit using only 1K unlabeled 
 cd ./python
 vim config.py # edit pycaffe_path / model_name / train_dataset path / val_dataset path according to your env
 python weights_quan.py # quantize weights to 4-bit
-python renorm.py # BN re-normalization in CPU mode
+python renorm.py # Batch-Norm re-normalization in CPU mode
 python activations_quan.py # quantize activations to 8-bit
 ```
 ##### Part II. Test on validation set
@@ -21,7 +21,7 @@ python activations_quan.py # quantize activations to 8-bit
 
 ##### WARNING:
 
-`renorm.py` will use 1K images to update BN parameters in default. The memory consumption can be pretty large for deep networks (>12G).
+`renorm.py` will use 1K images to update Batch-Norm parameters in default. The memory consumption can be pretty large for deep networks (>12G).
 You may edit Line 8 in `config.py` to alleviate this problem.
 
 ### Results:
