@@ -33,6 +33,8 @@ You may edit Line 8 in `config.py` to alleviate this problem.
 | ReNorm |  4-bit | 8-bit | 67.48 | 88.02
 | [ResNet-50](https://github.com/KaimingHe/deep-residual-networks) | 32-bit | 32-bit | 75.30 | 92.11
 | ReNorm |  4-bit | 8-bit | 73.82 | 91.33
+| [VGG16-BN](https://github.com/revilokeb/vgg16_batchnorm) | 32-bit | 32-bit | 70.44 | 89.94
+| ReNorm |  4-bit | 8-bit | 69.15 | 89.52
 
 ##### Details: 
 
